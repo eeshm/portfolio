@@ -7,8 +7,7 @@ export default function Home(){
  <div className="min-h-screen w-full flex flex-col items-center justify-start p-4 relative ">
   <div className="fixed inset-0">
   <div className="max-w-3xl sm:w-3/4 mx-auto px-6">
-  dfkfkdslfjlkdfkjk
-      HI
+
   </div>
   </div>
   </div>

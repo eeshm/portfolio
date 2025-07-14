@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { HoveredLink, Menu, MenuItem, ProductItem } from "./ui/navbar-menu";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
-import { ModeToggle } from "./toggle-button";
+import { ModeToggle } from "./ui/toggle-button";
 import { MdiGithub } from "./ui/github";
 import { Linkedin } from "lucide-react";
 import { MdiLinkedin } from "./ui/linkedin";
@@ -26,7 +26,7 @@ function Navbar({ className }: { className?: string }){
             </Link>
 
             <Link href={"mailto:eeshmidha08@gmail.com"}>
-            <MaterialSymbolsMail/>
+            <MaterialSymbolsMail/>``
             </Link>
             <div className="text-3xl -mt-2 text-stone-700 font-light">
                 |
