@@ -26,7 +26,7 @@ function Navbar({ className }: { className?: string }){
             </Link>
 
             <Link href={"mailto:eeshmidha08@gmail.com"}>
-            <MaterialSymbolsMail/>``
+            <MaterialSymbolsMail/>
             </Link>
             <div className="text-3xl -mt-2 text-stone-700 font-light">
                 |
