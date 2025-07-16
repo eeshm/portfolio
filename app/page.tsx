@@ -12,6 +12,7 @@ export default function Home(){
     <About />
     <Projects/>
     <Skills />
+    {/* To add education, footer components  */}
   </div>
   </div>
   )
