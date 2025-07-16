@@ -10,6 +10,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card"
+import { Button } from "./ui/moving-border";
 
 
 const projects =[
@@ -24,40 +25,43 @@ const projects =[
         id:2,
         Title:"BlogItup",
         Description:"Blog-It-Up is a dynamic web app with Appwrite as backend designed for seamless blog creation and sharing, empowering users to express their thoughts with ease. Experience a user-friendly platform that brings your ideas to life.",
-        Tech: ["React","Appwrite","Redux"]
+        Tech: ["React","Appwrite","Redux"],
+        Link:"https://github.com/eeshm/blog-it-up"
     },
     {
         id:3,
         Title:"VidStream",
         Description:"Backend Project using Express and MongoDB for video sharing and hosting platform.",
-        Tech: ["Node.js","Express","Mongodb"]
+        Tech: ["Node.js","Express","Mongodb"],
+        Link:"https://github.com/eeshm/VidStream"
     }
 ]
 export default function Projects(){
     return(
 <section className="py-20">
     <div className="flex flex-col gap-4 text-base text-[#8b8b8b]">
-        <h2 className="text-2xl font-bold text-white">Projects</h2>
-        <p>collection of my work</p>
+        <h2 className="text-2xl font-semibold tracking-tight text-black dark:text-white">Projects</h2>
+        <p className="text-black dark:text-[#8b8b8b]">collection of my work</p>
         <div className="mx-auto max-w-7xl px-4">
-        <div className="grid grid-cols-1 md:grid-cols-2 space-y-4 space-x-16 w-full">
-        {projects.map((project)=>(
-        <Link href={`/projects/${project.id}`} className="group" key={project.id}>
+        <div className="grid grid-cols-1 md:grid-cols-2 w-full lg:space-y-0 lg:space-x-8">
+        {projects.map((project,index)=>(
+        <Link href={`${project.Link}`} className="group" target="_blank" rel="noopener noreferrer">
         <div className="mb-6 " key={project.id}>
-        <CardSpotlight className="h-64 w-64 ">
-        <p className="text-base font-bold absolute top-5 z-20">
+        <div className={`transition-transform duration-300 ease-in-out transform hover:-translate-y-2  '-mt-10' }`}>
+        <CardSpotlight className="relative h-64 w-full ">
+        <p className="text-base text-black dark:text-white font-bold absolute top-5 z-20">
         {project.Title}
         </p>
         <div className="text-black dark:text-neutral-400 mt-4 relative z-20 h-24 line-clamp-2">
         {project.Description}
         </div>
         <div className="mt-4">
-          <p className="text-sm text-neutral-400">Tech Stack:</p>
+          <p className="text-sm text-black dark:text-neutral-400">Tech Stack:</p>
           <ul className="flex flex-wrap gap-1 mt-1">
-            {project.Tech.map((tech, index) => (
-                <div className="inline-flex items-center rounded-md border px-1.5 py-0.5 text-xs font-semibold
+            {project.Tech.map((tech) => (
+                <div className="inline-flex items-center  rounded-xs border px-1.5 py-0.5 text-xs font-semibold
                  transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 
-                 border-transparent bg-black dark:bg-white text-white dark:text-black shadow ">
+                 bg-white dark:bg-black dark:border-white text-gray border-gray-500 dark:text-white shadow ">
               <li key={index}>
                 {tech}
               </li>
@@ -66,6 +70,7 @@ export default function Projects(){
           </ul>
           </div>
     </CardSpotlight>
+        </div>
         </div>
             </Link>
         ))}

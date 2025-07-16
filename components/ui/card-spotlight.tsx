@@ -3,11 +3,13 @@
 import { useMotionValue, motion, useMotionTemplate } from "motion/react";
 import React, { MouseEvent as ReactMouseEvent, useState } from "react";
 import { cn } from "@/lib/utils";
+// 262626
+import { useTheme } from "next-themes";
 
 export const CardSpotlight = ({
   children,
-  radius = 350,
-  color = "#262626",
+  radius = 150,
+  color,
   className,
   ...props
 }: {
@@ -15,6 +17,7 @@ export const CardSpotlight = ({
   color?: string;
   children: React.ReactNode;
 } & React.HTMLAttributes<HTMLDivElement>) => {
+  const { theme } = useTheme();
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
   function handleMouseMove({
@@ -31,10 +34,12 @@ export const CardSpotlight = ({
   const [isHovering, setIsHovering] = useState(false);
   const handleMouseEnter = () => setIsHovering(true);
   const handleMouseLeave = () => setIsHovering(false);
+
+  const spotlightColor = theme === "dark" ? "#262626" : "#a6fced";
   return (
     <div
       className={cn(
-        "group/spotlight p-10 rounded-md relative border border-neutral-800 text-black dark:text-white bg-[#ffffff] dark:bg-black dark:border-neutral-800",
+        "group/spotlight p-10 rounded-md relative border border-[#dcfbdc] bg-white dark:bg-black dark:border-neutral-800",
         className
       )}
       onMouseMove={handleMouseMove}
@@ -43,14 +48,14 @@ export const CardSpotlight = ({
       {...props}
     >
       <motion.div
-        className="pointer-events-none absolute z-0 -inset-px rounded-md opacity-0 transition duration-300 group-hover/spotlight:opacity-100"
+        className="pointer-events-none absolute z-0 -inset-px rounded-md opacity-0 transition duration-300 group-hover/spotlight:opacity-80"
         style={{
-          backgroundColor: color,
+          backgroundColor: spotlightColor,
           maskImage: useMotionTemplate`
             radial-gradient(
               ${radius}px circle at ${mouseX}px ${mouseY}px,
               white,
-              transparent 80%
+              transparent 100%
             )
           `,
         }}

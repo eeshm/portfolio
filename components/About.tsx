@@ -8,11 +8,11 @@ export default function About(){
                     <span className="inline-block text-3xl font-bold tracking-tighter sm:text-5xl xl:text-5xl/none">
                         Hi, I'm Eesh
                     </span>
-                    <span className="inline-block tracking-tighter font-medium text-lg max-w-[600px] text-[#8b8b8b]">
+                    <span className="inline-block tracking-tighter font-medium text-lg max-w-[600px] text-black dark:text-white">
                         21 | Full stack developer
                     </span>
                     <div className="inline-block max-w-screen text-base space-y-4  text-[#8b8b8b] pt-20">
-                        <h1 className="text-white text-2xl font-bold">
+                        <h1 className="dark:text-white text-black text-2xl tracking-tight font-semibold">
                             About
                         </h1>
                         <p>full stack developer building seamless web experiences
