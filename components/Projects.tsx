@@ -18,7 +18,7 @@ const projects =[
         id:1,
         Title:"Music Lib",
         Description:"This Music Library is a visually appealing project built with Next.js and Aceternity UI, focusing on creating an elegant and smooth user experience. The project leverages Next.js for fast performance and Aceternity UI for a polished design",
-        Tech: ["Typescript","Next.js", "Aceternity UI"],
+        Tech: ["Typescript","Next.js", "Aceternity"],
         Link:"https://github.com/eeshm/music-lib-nextjs"
     },
     {
@@ -38,14 +38,14 @@ const projects =[
 ]
 export default function Projects(){
     return(
-<section className="py-20">
+<section className="py-10">
     <div className="flex flex-col gap-4 text-base text-[#8b8b8b]">
         <h2 className="text-2xl font-semibold tracking-tight text-black dark:text-white">Projects</h2>
         <p className="text-black dark:text-[#8b8b8b]">collection of my work</p>
-        <div className="mx-auto max-w-7xl px-4">
+        <div className="max-w-7xl ">
         <div className="grid grid-cols-1 md:grid-cols-2 w-full lg:space-y-0 lg:space-x-8">
         {projects.map((project,index)=>(
-        <Link href={`${project.Link}`} className="group" target="_blank" rel="noopener noreferrer">
+        <Link href={`${project.Link}`} className="group" target="_blank" rel="noopener noreferrer" key={project.id}>
         <div className="mb-6 " key={project.id}>
         <div className={`transition-transform duration-300 ease-in-out transform hover:-translate-y-2  '-mt-10' }`}>
         <CardSpotlight className="relative h-64 w-full ">

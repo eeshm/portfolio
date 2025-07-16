@@ -17,7 +17,7 @@ export const CardSpotlight = ({
   color?: string;
   children: React.ReactNode;
 } & React.HTMLAttributes<HTMLDivElement>) => {
-  const { theme } = useTheme();
+  const {theme} = useTheme();
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
   function handleMouseMove({
@@ -39,7 +39,7 @@ export const CardSpotlight = ({
   return (
     <div
       className={cn(
-        "group/spotlight p-10 rounded-md relative border border-[#dcfbdc] bg-white dark:bg-black dark:border-neutral-800",
+        "group/spotlight px-5 py-10 rounded-md relative border border-[#dcfbdc] bg-white dark:bg-black dark:border-neutral-800",
         className
       )}
       onMouseMove={handleMouseMove}
