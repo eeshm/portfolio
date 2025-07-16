@@ -20,7 +20,7 @@ export default function About(){
                         <p>exploring blockchain and ai to unlock new possibilities
                         </p>
                         <p>
-                        always curious, always curious
+                        always curious, always learning
                         </p>
                     </div >
                 </div>
