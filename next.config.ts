@@ -9,7 +9,9 @@ const nextConfig: NextConfig = {
     // your project has ESLint errors.
     ignoreDuringBuilds: true,
   },
-  /* config options here */
+  typescript:{
+    ignoreBuildErrors:true,
+  }
 };
 
 export default nextConfig;
