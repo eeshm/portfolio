@@ -57,7 +57,7 @@ export default function Projects(){
         </div>
         <div className="mt-4">
           <p className="text-sm text-black dark:text-neutral-400">Tech Stack:</p>
-          <ul className="flex flex-wrap gap-1 mt-1">
+          <ul className="flex flex-wrap gap-1 mt-2">
             {project.Tech.map((tech) => (
                 <div className="inline-flex items-center  rounded-xs border px-1.5 py-0.5 text-xs font-semibold
                  transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 

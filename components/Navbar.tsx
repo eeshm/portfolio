@@ -16,9 +16,6 @@ function Navbar({ className }: { className?: string }){
         <div
         className={cn("fixed bottom-4 inset-x-0 max-w-2xl mx-auto z-50 ", className)} >
             <Menu setActive={setActive}>
-            <Link href={"./EeshResume.pdf"} target="_blank">
-            <QlementineIconsResume16/>
-            </Link>
 
             <Link href={"https://github.com/eeshm"} target="_blank">
             <MdiGithub/>
@@ -31,6 +28,9 @@ function Navbar({ className }: { className?: string }){
 
             <Link href={"mailto:eeshmidha08@gmail.com"} target="_blank">
             <MaterialSymbolsMail/>
+            </Link>
+            <Link href={"./EeshResume.pdf"} target="_blank">
+            <QlementineIconsResume16/>
             </Link>
             <div className="text-3xl -mt-2 text-stone-700 font-light">
                 |
