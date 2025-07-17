@@ -1,4 +1,3 @@
-import Image from "next/image";
 import "./globals.css";
 import { GridBackgroundDemo } from "@/components/ui/grid-background";
 import Navbar from "@/components/Navbar";
