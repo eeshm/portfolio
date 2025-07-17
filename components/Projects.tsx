@@ -12,30 +12,42 @@ import {
 } from "@/components/ui/card"
 import { Button } from "./ui/moving-border";
 
+const projects = [
+  {
+    id: 1,
+    Title: "Music Lib",
+    Description: "This Music Library is a visually appealing project built with Next.js and Aceternity UI, focusing on creating an elegant and smooth user experience. The project leverages Next.js for fast performance and Aceternity UI for a polished design",
+    Tech: [
+      { id: 1, name: "Typescript" },
+      { id: 2, name: "Next.js" },
+      { id: 3, name: "Aceternity" }
+    ],
+    Link: "https://github.com/eeshm/music-lib-nextjs"
+  },
+  {
+    id: 2,
+    Title: "BlogItup",
+    Description: "Blog-It-Up is a dynamic web app with Appwrite as backend designed for seamless blog creation and sharing, empowering users to express their thoughts with ease. Experience a user-friendly platform that brings your ideas to life.",
+    Tech: [
+      { id: 4, name: "React" },
+      { id: 5, name: "Appwrite" },
+      { id: 6, name: "Redux" }
+    ],
+    Link: "https://github.com/eeshm/blog-it-up"
+  },
+  {
+    id: 3,
+    Title: "VidStream",
+    Description: "Backend Project using Express and MongoDB for video sharing and hosting platform.",
+    Tech: [
+      { id: 7, name: "Node.js" },
+      { id: 8, name: "Express" },
+      { id: 9, name: "Mongodb" }
+    ],
+    Link: "https://github.com/eeshm/VidStream"
+  }
+];
 
-const projects =[
-    {
-        id:1,
-        Title:"Music Lib",
-        Description:"This Music Library is a visually appealing project built with Next.js and Aceternity UI, focusing on creating an elegant and smooth user experience. The project leverages Next.js for fast performance and Aceternity UI for a polished design",
-        Tech: ["Typescript","Next.js", "Aceternity"],
-        Link:"https://github.com/eeshm/music-lib-nextjs"
-    },
-    {
-        id:2,
-        Title:"BlogItup",
-        Description:"Blog-It-Up is a dynamic web app with Appwrite as backend designed for seamless blog creation and sharing, empowering users to express their thoughts with ease. Experience a user-friendly platform that brings your ideas to life.",
-        Tech: ["React","Appwrite","Redux"],
-        Link:"https://github.com/eeshm/blog-it-up"
-    },
-    {
-        id:3,
-        Title:"VidStream",
-        Description:"Backend Project using Express and MongoDB for video sharing and hosting platform.",
-        Tech: ["Node.js","Express","Mongodb"],
-        Link:"https://github.com/eeshm/VidStream"
-    }
-]
 export default function Projects(){
     return(
 <section className="pt-20">
@@ -59,11 +71,11 @@ export default function Projects(){
           <p className="text-sm text-black dark:text-neutral-400">Tech Stack:</p>
           <ul className="flex flex-wrap gap-1 mt-2">
             {project.Tech.map((tech) => (
-                <div className="inline-flex items-center  rounded-xs border px-1.5 py-0.5 text-xs font-semibold
+                <div key={tech.id} className="inline-flex items-center  rounded-xs border px-1.5 py-0.5 text-xs font-semibold
                  transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 
                  bg-white dark:bg-black dark:border-white text-gray border-gray-500 dark:text-white shadow ">
-              <li key={index}>
-                {tech}
+              <li>
+                {tech.name}
               </li>
               </ div>
             ))}

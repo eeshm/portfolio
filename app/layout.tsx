@@ -35,8 +35,6 @@ export default function RootLayout({
             enableSystem
             disableTransitionOnChange
           >
-            <GridBackgroundDemo />
-          <Navbar />
             {children}
           </ThemeProvider>
       </body>
