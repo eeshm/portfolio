@@ -38,8 +38,8 @@ const projects =[
 ]
 export default function Projects(){
     return(
-<section className="py-10">
-    <div className="flex flex-col gap-4 text-base text-[#8b8b8b]">
+<section className="pt-20">
+    <div className="flex flex-col gap-3 text-base text-[#8b8b8b]">
         <h2 className="text-2xl font-semibold tracking-tight text-black dark:text-white">Projects</h2>
         <p className="text-black dark:text-[#8b8b8b]">collection of my work</p>
         <div className="max-w-7xl ">

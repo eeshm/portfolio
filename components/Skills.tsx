@@ -4,7 +4,7 @@ export default function Skills(){
     const Skills = ["Next.js", "Typescript","React", "Postres", "Express", "Java","MySQL","Web3.js","ai tools"];
     return(
         <section className="py-10">
-        <div className="flex flex-col gap-y-4">
+        <div className="flex flex-col gap-y-3">
             <h2 className="text-2xl font-semibold tracking-tight"> 
                 Skills
             </h2>

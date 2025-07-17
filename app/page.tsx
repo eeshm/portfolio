@@ -3,6 +3,7 @@ import "./globals.css";
 import About from "@/components/About";
 import Projects from "@/components/Projects";
 import Skills from "@/components/Skills";
+import Footer from "@/components/Footer";
 
 
 export default function Home(){
@@ -12,6 +13,7 @@ export default function Home(){
     <About />
     <Projects/>
     <Skills />
+    <Footer />
     {/* To add education, footer components  */}
   </div>
   </div>
