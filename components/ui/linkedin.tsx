@@ -1,3 +1,4 @@
+import { SVGProps } from "react";
 
 export function MdiLinkedin(props: SVGProps<SVGSVGElement>) {
   return (

@@ -1,3 +1,4 @@
+import { SVGProps } from "react";
 
 export function MaterialSymbolsMail(props: SVGProps<SVGSVGElement>) {
   return (
