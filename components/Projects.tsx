@@ -1,15 +1,5 @@
 import { CardSpotlight } from "@/components/ui/card-spotlight";
 import Link from "next/link";
-
-import {
-  Card,
-  CardAction,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card"
 import { Button } from "./ui/moving-border";
 
 const projects = [
