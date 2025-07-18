@@ -21,7 +21,7 @@ export default function About(){
                  About
                 </h1>
             <div className="text-sm md:text-base space-y-2 md:space-y-4">
-                <p>full stack developer building seamless web experiences
+                <p>full stack developer building seamless experiences
                 </p>
                 <p>exploring blockchain and ai to unlock new possibilities
                 </p>
