@@ -12,7 +12,7 @@ const projects = [
       { id: 2, name: "Next.js" },
       { id: 3, name: "Aceternity" }
     ],
-    Link: "https://github.com/eeshm/music-lib-nextjs"
+    Link: "https://music-lib-eeshmidha.vercel.app/"
   },
   {
     id: 2,
@@ -23,7 +23,7 @@ const projects = [
       { id: 5, name: "Appwrite" },
       { id: 6, name: "Redux" }
     ],
-    Link: "https://github.com/eeshm/blog-it-up"
+    Link: "https://blogitup.vercel.app/"
   },
   {
     id: 3,
