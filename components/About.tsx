@@ -11,8 +11,8 @@ export default function About(){
                         21 | Full stack developer
                     </span>
                 </div>
-                <div className="relative w-[120px] h-[120px]  rounded-xl rounded-t-xl overflow-hidden">
-                    <Image src={"/Eesh2.jpg"} alt="Eesh" width={500} height={500} className="rounded"/>
+                <div className="relative w-[120px] h-[120px] rounded-full overflow-hidden">
+                    <Image src={"/Picture.jpg"} alt="eesh..." width={500} height={500} className="rounded"/>
                     
                 </div>
             </div>
