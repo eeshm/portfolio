@@ -43,7 +43,7 @@ export default function Projects(){
 <section className="pt-20">
     <div className="flex flex-col gap-3 text-base text-[#8b8b8b]">
         <h2 className="text-2xl font-semibold tracking-tight text-black dark:text-white">Projects</h2>
-        <p className="text-black dark:text-[#8b8b8b]">collection of my work</p>
+        <p className="text-[#8b8b8b]">collection of my work</p>
         <div className="max-w-7xl ">
         <div className="grid grid-cols-1 md:grid-cols-2 w-full lg:space-y-0 lg:space-x-8">
         {projects.map((project,index)=>(
@@ -54,7 +54,7 @@ export default function Projects(){
         <p className="text-base text-black dark:text-white font-bold absolute top-5 z-20">
         {project.Title}
         </p>
-        <div className="text-black dark:text-neutral-400 mt-4 relative z-20 h-24 line-clamp-2">
+        <div className="text-[#383737] dark:text-neutral-400 mt-4 relative z-20 h-24 line-clamp-2">
         {project.Description}
         </div>
         <div className="mt-4">

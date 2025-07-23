@@ -8,15 +8,19 @@ interface SlideDownProps {
   className?: string;
   delay?: number;
 }
+
 const SlideDown: React.FC<SlideDownProps> = ({ children, className = "", delay = 0 }) => {
   return (
     <motion.div
-      initial={{ opacity: 0, y: -100 }} // start higher for more dramatic slide
+      initial={{ opacity: 0, y: -50 }} // Slightly lower start for smoother appearance
       animate={{ opacity: 1, y: 0 }}
       transition={{
-        duration: 0.5, // slightly longer for smoother motion
+        duration: 0.1, // Slightly increased duration for smoother transition
         ease: "easeOut",
         delay: delay,
+        type: "spring", 
+        stiffness: 50, 
+        damping: 10,
       }}
       className={className}
     >
@@ -24,6 +28,5 @@ const SlideDown: React.FC<SlideDownProps> = ({ children, className = "", delay =
     </motion.div>
   );
 };
-
 
 export default SlideDown;

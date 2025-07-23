@@ -14,7 +14,7 @@ export default function Home(){
     <GridBackgroundDemo />
     <Navbar />
     <Navbar />
-    <SlideDown delay={0.2}>
+    <SlideDown delay={0}>
  <div className="h-screen w-full flex flex-col overflow-y-auto items-center justify-start p-2  relative ">
   <div className="max-w-2xl sm:w-3/4 mx-auto px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12">
     <About />

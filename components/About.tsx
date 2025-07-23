@@ -7,7 +7,7 @@ export default function About(){
                     <span className="inline-block text-3xl font-bold tracking-tighter sm:text-5xl xl:text-5xl/none">
                         Hi, I'm Eesh
                     </span>
-                    <span className="inline-block text-base  md:text-lg max-w-[600px] text-black dark:text-white">
+                    <span className="inline-block text-base  md:text-lg max-w-[600px] text-[#545252] dark:text-white">
                         21 | Full stack developer
                     </span>
                 </div>
