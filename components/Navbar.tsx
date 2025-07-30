@@ -14,8 +14,9 @@ function Navbar({ className }: { className?: string }){
     const[active,setActive]=useState<string | null>(null);
     return(
         <div
-        className={cn("fixed bottom-4 inset-x-0 max-w-2xl mx-auto z-50 ", className)} >
+        className={cn("fixed bottom-4 left-1/2 -translate-x-1/2 z-50  px-4 py-2 pointer-events-none")} >
             <Menu setActive={setActive}>
+  <div className="pointer-events-auto flex gap-4 items-center">
 
             <Link href={"https://github.com/eeshm"} target="_blank">
             <MdiGithub/>
@@ -37,6 +38,7 @@ function Navbar({ className }: { className?: string }){
             </div>
             <div className="">
                 <ModeToggle />
+            </div>
             </div>
             </Menu>
         </div>

@@ -40,8 +40,8 @@ const projects = [
 
 export default function Projects(){
     return(
-<section className="pt-20">
-    <div className="flex flex-col gap-3 text-base text-[#8b8b8b]">
+<section className="pt-10">
+    <div className="flex flex-col gap-3 text-base text-[#8b8b8b] space-y-2">
         <h2 className="text-2xl font-semibold tracking-tight text-black dark:text-white">Projects</h2>
         <p className="text-[#8b8b8b]">collection of my work</p>
         <div className="max-w-7xl ">
