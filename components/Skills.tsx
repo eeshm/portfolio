@@ -1,11 +1,11 @@
 
 
 export default function Skills(){
-    const Skills = ["Next.js", "Typescript","React", "Postres", "Express", "Java","MySQL","Web3.js","ai tools"];
+    const Skills = ["Next.js", "Typescript","React", "Postgres", "Express", "Java","MySQL","Web3.js","ai tools"];
     return(
         <section className="py-10">
         <div className="flex flex-col gap-y-3">
-            <h2 className="text-2xl font-semibold tracking-tight"> 
+            <h2 className="text-2xl font-bold tracking-tight"> 
                 Skills
             </h2>
             <div className="flex flex-wrap gap-1">

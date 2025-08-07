@@ -42,8 +42,8 @@ export default function Projects(){
     return(
 <section className="pt-10">
     <div className="flex flex-col gap-3 text-base text-[#8b8b8b] space-y-2">
-        <h2 className="text-2xl font-semibold tracking-tight text-black dark:text-white">Projects</h2>
-        <p className="text-[#8b8b8b]">collection of my work</p>
+        <h2 className="text-2xl font-bold tracking-tight text-black dark:text-white">Projects</h2>
+        <p className="dark:text-[#8b8b8b] text-black">collection of my work</p>
         <div className="max-w-7xl ">
         <div className="grid grid-cols-1 md:grid-cols-2 w-full lg:space-y-0 lg:space-x-8">
         {projects.map((project,index)=>(

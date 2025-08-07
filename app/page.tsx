@@ -8,19 +8,19 @@ import Footer from "@/components/Footer";
 import SlideDown from "@/components/Slidedown";
 
 
-export default function Home(){
-  return(
+export default function Home() {
+  return (
     <>
-    <GridBackgroundDemo />
-    <Navbar />
- <div className="h-screen w-full flex flex-col overflow-y-auto items-center justify-start p-2  relative ">
-  <div className="max-w-2xl sm:w-3/4 mx-auto px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12">
-    <About />
-    <Projects/>
-    <Skills />
-    <Footer />
-  </div>
-  </div>
-  </>
+      {/* <GridBackgroundDemo /> */}
+      <Navbar />
+      <div className="h-screen w-full flex flex-col overflow-y-auto items-center justify-start p-2 relative ">
+        <div className="max-w-2xl mx-auto px-2 sm:px-4 md:px-8 ">
+          <About />
+          <Projects />
+          <Skills />
+          <Footer />
+        </div>
+      </div>
+    </>
   )
 }
