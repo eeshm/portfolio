@@ -14,23 +14,23 @@ function Navbar({ className }: { className?: string }){
     const[active,setActive]=useState<string | null>(null);
     return(
         <div
-        className={cn("fixed bottom-4 left-1/2 -translate-x-1/2 z-50  px-4 py-2 pointer-events-none")} >
+        className={cn("fixed bottom-0 left-1/2 -translate-x-1/2 z-50  px-4 py-2 pointer-events-none")} >
             <Menu setActive={setActive}>
   <div className="pointer-events-auto flex gap-4 items-center">
 
-            <Link href={"https://github.com/eeshm"} target="_blank">
+            <Link href={"https://github.com/eeshm"}>
             <MdiGithub/>
             </Link>
 
 
-            <Link href={"https://linkedin.com/in/eesh-midha"} target="_blank">
+            <Link href={"https://linkedin.com/in/eesh-midha"}>
             <MdiLinkedin/>
             </Link>
 
-            <Link href={"mailto:eeshmidha08@gmail.com"} target="_blank">
+            <Link href={"mailto:eeshmidha08@gmail.com"}>
             <MaterialSymbolsMail/>
             </Link>
-            <Link href={"./EeshResume.pdf"} target="_blank">
+            <Link href={"./EeshResume.pdf"}>
             <QlementineIconsResume16/>
             </Link>
             <div className="text-3xl -mt-2 text-stone-700 font-light">

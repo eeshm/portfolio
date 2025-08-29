@@ -5,7 +5,7 @@ import { Button } from "./ui/moving-border";
 const projects = [
   {
     id: 1,
-    Title: "Music Lib",
+    Title: "Music Lib (Frontend UI)",
     Description: "This Music Library is a visually appealing project built with Next.js and Aceternity UI, focusing on creating an elegant and smooth user experience. The project leverages Next.js for fast performance and Aceternity UI for a polished design",
     Tech: [
       { id: 1, name: "Typescript" },
@@ -27,7 +27,7 @@ const projects = [
   },
   {
     id: 3,
-    Title: "VidStream",
+    Title: "VidStream (Backend Project)",
     Description: "Backend Project using Express and MongoDB for video sharing and hosting platform.",
     Tech: [
       { id: 7, name: "Node.js" },
@@ -37,7 +37,6 @@ const projects = [
     Link: "https://github.com/eeshm/VidStream"
   }
 ];
-
 export default function Projects(){
     return(
 <section className="pt-10">
@@ -50,7 +49,7 @@ export default function Projects(){
         <Link href={`${project.Link}`} className="group" target="_blank" rel="noopener noreferrer" key={project.id}>
         <div className="mb-6 " key={project.id}>
         <div className={`transition-transform duration-300 ease-in-out transform hover:-translate-y-2  '-mt-10' }`}>
-        <CardSpotlight className="relative h-64 w-full ">
+        <CardSpotlight className="relative h-64 w-full md:w-72">
         <p className="text-base text-black dark:text-white font-bold absolute top-5 z-20">
         {project.Title}
         </p>
@@ -61,9 +60,8 @@ export default function Projects(){
           <p className="text-sm text-black dark:text-neutral-400">Tech Stack:</p>
           <ul className="flex flex-wrap gap-1 mt-2">
             {project.Tech.map((tech) => (
-                <div key={tech.id} className="inline-flex items-center  rounded-xs border px-1.5 py-0.5 text-xs font-semibold
-                 transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 
-                 bg-white dark:bg-black dark:border-white text-gray border-gray-500 dark:text-white shadow ">
+                <div key={tech.id} className="inline-flex items-center  rounded-sm border px-1.5 py-0.5 text-xs font-bold 
+                 bg-black dark:bg-white  text-white border-gray-500 dark:text-black  ">
               <li>
                 {tech.name}
               </li>
