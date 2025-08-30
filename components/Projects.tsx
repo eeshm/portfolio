@@ -13,7 +13,7 @@ const projects = [
       { id: 2, name: "Typescript" },
       { id: 3, name: "Supabase" }
     ],
-    liveLink: "https://dev-link.vercel.app",
+    liveLink: "https://dev-pick.vercel.app",
     github: "https://github.com/eeshm/devpick",
     image:"/devpick.png"
   },
