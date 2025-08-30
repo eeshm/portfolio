@@ -31,37 +31,15 @@ export const CardSpotlight = ({
     mouseY.set(clientY - top);
   }
 
-  const [isHovering, setIsHovering] = useState(false);
-  const handleMouseEnter = () => setIsHovering(true);
-  const handleMouseLeave = () => setIsHovering(false);
 
-  const spotlightColor = theme === "dark" ? "#262626" : "#a6fced";
   return (
     <div
       className={cn(
-        "group/spotlight px-5 py-10 rounded-md relative border border-[#dcfbdc] bg-white dark:bg-black dark:border-neutral-800",
+        "p-4 rounded-md relative shadow-xl bg-white dark:bg-black ",
         className
       )}
-      onMouseMove={handleMouseMove}
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
       {...props}
     >
-      <motion.div
-        className="pointer-events-none absolute z-0 -inset-px rounded-md opacity-0 transition duration-300 group-hover/spotlight:opacity-80"
-        style={{
-          backgroundColor: spotlightColor,
-          maskImage: useMotionTemplate`
-            radial-gradient(
-              ${radius}px circle at ${mouseX}px ${mouseY}px,
-              white,
-              transparent 100%
-            )
-          `,
-        }}
-      >
-
-      </motion.div>
       {children}
     </div>
   );
