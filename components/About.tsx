@@ -12,7 +12,7 @@ export default function About(){
                     </span>
                 </div>
                 <div className="relative w-[120px] h-[120px] rounded-full overflow-hidden">
-                    <Image src={"/Picture.jpg"} alt="eesh..." width={500} height={500} className="rounded"/>
+                    <Image src={"/EeshMidha.jpg"} alt="eesh..." width={500} height={500} className="rounded"/>
                 </div>
             </div>
             <div className="max-w-3xl mx-auto text-base space-y-2 md:space-y-4  text-[#6c6c6c] ">
