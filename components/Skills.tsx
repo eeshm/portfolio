@@ -1,7 +1,7 @@
 
 
 export default function Skills(){
-    const Skills = ["Next.js", "Typescript","React", "Postgres", "Supabse","Express", "Java","MySQL","Web3.js", "Docker"];
+    const Skills = ["Next.js", "Typescript","React", "Postgres", "Supabse","Express", "Java","MySQL","Web3.js", "Docker", 'Zustland','Git'];
     return(
         <section className="py-10">
         <div className="flex flex-col gap-y-3">

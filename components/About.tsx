@@ -15,11 +15,11 @@ export default function About(){
                     <Image src={"/Picture.jpg"} alt="eesh..." width={500} height={500} className="rounded"/>
                 </div>
             </div>
-            <div className="max-w-3xl mx-auto text-base space-y-2 md:space-y-4  text-[#6c6c6c] ">
+            <div className="max-w-3xl mx-auto text-base space-y-2 md:space-y-2  text-[#6c6c6c] ">
                 <h1 className="dark:text-white text-black text-2xl tracking-tight font-bold">
                  About
                 </h1>
-            <div className="text-sm md:text-base space-y-2 md:space-y-4">
+            <div className="text-sm md:text-base space-y-2 md:space-y-2">
                 <p>full stack developer building seamless experiences
                 </p>
                 <p>exploring blockchain and ai to unlock new possibilities

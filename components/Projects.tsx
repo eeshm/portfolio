@@ -7,7 +7,7 @@ const projects = [
   {
     id: 1,
     Title: "DevPick",
-    Description: "DevPick is the platform that helps developers and teams make smarter tech decisions. From exploring categories to weighing pros and cons to comparing tools side-by-side, DevPick cuts through the noise and guides you to the right choice",
+    Description: "Platform that cuts through the noise and helps developers and teams make smarter tech decisions. From exploring categories to weighing pros and cons to comparing tools side-by-side, DevPick guides you to the right choice.",
     Tech: [
       { id: 1, name: "Next.js" },
       { id: 2, name: "Typescript" },
@@ -19,8 +19,20 @@ const projects = [
   },
   {
     id: 2,
+    Title: "ReachInbox",
+    Description: "A Node.js CLI application that integrates multiple IMAP email accounts, uses AI to categorize incoming emails, indexes them in Elasticsearch, and sends Slack notifications and webhook events for relevant leads.",
+    Tech: [
+      { id: 1, name: "Node.js" },
+      { id: 2, name: "OpenAI" },
+      { id: 3, name: "IMAP" }
+    ],
+    liveLink: "",
+    github: "https://github.com/eeshm/reachbox-eesh"
+  },
+  {
+    id: 3,
     Title: "Music Lib (Frontend UI)",
-    Description: "Music Library is an appealing project built with Next.js, focusing on creating an elegant and smooth user experience. The project leverages Next.js for fast performance and Aceternity UI for a polished design",
+    Description: "A clean, interactive Music Library UI with various features. It’s built with modern design, smooth animations, and fully responsive for a polished user experience on any device. Showcasing frontend and Typescript skills.",
     Tech: [
       { id: 1, name: "Next.js" },
       { id: 2, name: "Taiwind CSS" }
@@ -28,20 +40,8 @@ const projects = [
     liveLink: "https://music-lib-eeshmidha.vercel.app/",
     github: ""
   },
-  // {
-  //   id: 3,
-  //   Title: "BlogItup",
-  //   Description: "Blog-It-Up is a dynamic web app with react and Appwrite as backend, designed for seamless blog creation and sharing, empowering users to express their thoughts with ease. ",
-  //   Tech: [
-  //     { id: 1, name: "React" },
-  //     { id: 2, name: "Appwrite" },
-  //     { id: 3, name: "Redux" }
-  //   ],
-  //   liveLink: "https://blogitup.vercel.app/",
-  //   github: "https://github.com/eeshm/blog-it-up"
-  // },
   {
-    id: 3,
+    id: 4,
     Title: "VidStream (Backend Project)",
     Description: "Backend Project using Express and MongoDB for video sharing and hosting platform.",
     Tech: [
@@ -56,13 +56,13 @@ const projects = [
 export default function Projects() {
   return (
     <section className="pt-10">
-      <div className="flex flex-col gap-3 text-base text-[#8b8b8b] space-y-2">
+      <div className="flex flex-col  text-base text-[#8b8b8b] space-y-2">
         <h2 className="text-2xl font-bold tracking-tight text-black dark:text-white">Projects</h2>
         <p className="dark:text-[#8b8b8b] text-black">collection of my work</p>
         <div className="max-w-7xl ">
           <div className="grid grid-cols-1 w-full">
             {projects.map((project, index) => (
-                <div className="mb-4" key={project.id}>
+                <div className="mb-4 " key={project.id}>
                   <div className={`transition-transform duration-300 ease-in-out transform hover:-translate-y-2`}>
                     <CardSpotlight className="relative h-full w-full ">
                       <div className="flex  justify-between ">
