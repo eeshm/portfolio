@@ -7,7 +7,7 @@ const projects = [
   {
     id: 1,
     Title: "DevPick",
-    Description: "Platform that cuts through the noise and helps developers and teams make smarter tech decisions. From exploring categories to weighing pros and cons to comparing tools side-by-side, DevPick guides you to the right choice.",
+    Description: "Platform that cuts through the noise and helps developers and teams make smarter tech decisions. From exploring categories to weighing pros and cons to comparing tools side-by-side, DevPick guides you to the right choice. Grew to 3000+ users through organic reach.",
     Tech: [
       { id: 1, name: "Next.js" },
       { id: 2, name: "Typescript" },
