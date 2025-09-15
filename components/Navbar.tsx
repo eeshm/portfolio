@@ -30,7 +30,7 @@ function Navbar({ className }: { className?: string }){
             <Link href={"mailto:eeshmidha08@gmail.com"}>
             <MaterialSymbolsMail/>
             </Link>
-            <Link href={"./Eesh-Resume.pdf"}>
+            <Link href={"https://drive.google.com/file/d/1LYji7Ueg8uuDERr6dNRF7EulkmGYwUfi/view"}>
             <QlementineIconsResume16/>
             </Link>
             <div className="text-3xl -mt-2 text-stone-700 font-light">
