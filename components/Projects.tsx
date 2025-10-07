@@ -1,13 +1,14 @@
-import { CardSpotlight } from "@/components/ui/card-spotlight";
 import Link from "next/link";
-import { GithubIcon, Globe } from "lucide-react";
+import { Globe } from "lucide-react";
 import Image from "next/image";
+import { BlurFade } from "./ui/blur-fade";
+import Github from "../public/GithubLogo.png"; // Make sure this path is correct
 
 const projects = [
   {
     id: 1,
     Title: "DevPick",
-    Description: "Platform that cuts through the noise and helps developers and teams make smarter tech decisions. From exploring categories to weighing pros and cons to comparing tools side-by-side, DevPick guides you to the right choice. Grew to 3000+ users through organic reach.",
+    Description: "DevPick helps developers and teams cut through the noise to make smarter tech decisions. Explore, compare, and choose the right tools—no hype, just clarity. Grew to 3000+ users through organic reach.",
     Tech: [
       { id: 1, name: "Next.js" },
       { id: 2, name: "Typescript" },
@@ -15,10 +16,23 @@ const projects = [
     ],
     liveLink: "https://dev-pick.vercel.app",
     github: "https://github.com/eeshm/devpick",
-    image:"/devpick.png"
+    image: "/devpick.png", // Ensure this image exists in your public folder
   },
   {
     id: 2,
+    Title: "BangerX",
+    Description: "X search, but on steroids. An unfiltered engine that finds the signal in the noise, letting you instantly pull viral hits by any topic or creator.",
+    Tech: [
+      { id: 1, name: "Next.js" },
+      { id: 2, name: "Typescript" },
+      { id: 3, name: "Shadcn UI" }
+    ],
+    liveLink: "https://banger-x.vercel.app",
+    github: "https://github.com/eeshm/bangerx",
+    image: "/bangerx.png", // Ensure this image exists in your public folder
+  },
+  {
+    id: 3,
     Title: "ReachInbox",
     Description: "A Node.js CLI application that integrates multiple IMAP email accounts, uses AI to categorize incoming emails, indexes them in Elasticsearch, and sends Slack notifications and webhook events for relevant leads.",
     Tech: [
@@ -27,106 +41,106 @@ const projects = [
       { id: 3, name: "IMAP" }
     ],
     liveLink: "",
-    github: "https://github.com/eeshm/reachbox-eesh"
+    github: "https://github.com/eeshm/reachbox-eesh",
   },
   {
-    id: 3,
-    Title: "Music Lib (Frontend UI)",
-    Description: "A clean, interactive Music Library UI with various features. It’s built with modern design, smooth animations, and fully responsive for a polished user experience on any device. Showcasing frontend and Typescript skills.",
+    id: 4,
+    Title: "Music Lib (UI)",
+    Description: "A sleek, responsive music library UI with smooth animations, built with TypeScript to showcase frontend skills.",
     Tech: [
       { id: 1, name: "Next.js" },
       { id: 2, name: "Taiwind CSS" }
     ],
     liveLink: "https://music-lib-eeshmidha.vercel.app/",
-    github: ""
+    github: "",
+    image: "/musiclib.png", // Ensure this image exists in your public folder
   },
-  {
-    id: 4,
-    Title: "VidStream (Backend Project)",
-    Description: "Backend Project using Express and MongoDB for video sharing and hosting platform.",
-    Tech: [
-      { id: 1, name: "Node.js" },
-      { id: 2, name: "Express" },
-      { id: 3, name: "Mongodb" }
-    ],
-    liveLink: "",
-    github: "https://github.com/eeshm/VidStream"
-  }
 ];
+
+// Reusable ProjectCard Component
+// ... (imports and projects array remain the same)
+
+const ProjectCard = ({ project }:any) => {
+  return (
+    <div className="relative overflow-hidden h-full flex flex-col rounded-lg bg-white dark:bg-[#0a0a0a] shadow-md hover:shadow-xl transition-shadow duration-300 ease-in-out border border-gray-200 dark:border-zinc-800">
+      {/* Project Image */}
+      {project.image && (
+        <div className="relative h-48 w-full overflow-hidden rounded-t-lg">
+          <Image
+            src={project.image}
+            alt={project.Title}
+            layout="fill"
+            className="transition-transform object-top object-cover duration-300 group-hover:scale-105"
+          />
+        </div>
+      )}
+
+      <div className="p-4 flex flex-col flex-1"> {/* Use flex-1 here to ensure this div fills the parent's height */}
+        {/* Title */}
+        <h3 className="text-xl font-bold text-black dark:text-white mb-1">
+          {project.Title}
+        </h3>
+
+        {/* Description */}
+        <p className="text-pretty font-sans text-xs text-muted-foreground dark:prose-invert mb-2">
+          {project.Description}
+        </p>
+
+        {/* This wrapper pushes its content to the bottom */}
+        <div className="mt-auto pt-4">
+          {/* Tech Stack */}
+          <div className="flex flex-wrap gap-2 mb-3">
+            {project.Tech.map((tech:any) => (
+              <span
+                key={tech.id}
+                className="inline-flex items-center rounded-sm border font-semibold transition-colors focus:outline-none border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80 px-1 py-0 text-[10px]"
+              >
+                {tech.name}
+              </span>
+            ))}
+          </div>
+
+          {/* Links */}
+          <div className="flex flex-row flex-wrap items-start gap-1">
+            {project.liveLink && (
+              <Link href={project.liveLink} target="_blank" rel="noopener noreferrer"
+                className="items-center rounded-md border font-semibold transition-colors focus:outline-none border-transparent bg-primary text-primary-foreground shadow hover:bg-primary/80 flex gap-2 px-2 py-1 text-[10px]">
+                <Globe className="size-3" />
+                <span>Website</span>
+              </Link>
+            )}
+            {project.github && (
+              <Link href={project.github} target="_blank" rel="noopener noreferrer" className="items-center rounded-md border font-semibold transition-colors focus:outline-none border-transparent bg-primary text-primary-foreground shadow hover:bg-primary/80 flex gap-2 px-2 py-1 text-[10px]">
+                <Image src={Github} alt="GitHub" width={12} height={12} className="filter invert dark:filter-none" />
+                <span>Source</span>
+              </Link>
+            )}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
 export default function Projects() {
   return (
     <section className="pt-10">
-      <div className="flex flex-col  text-base text-[#8b8b8b] space-y-2">
-        <h2 className="text-2xl font-bold tracking-tight text-black dark:text-white">Projects</h2>
-        <p className="dark:text-[#8b8b8b] text-black">collection of my work</p>
-        <div className="max-w-7xl ">
-          <div className="grid grid-cols-1 w-full">
+      <div className="flex flex-col text-base text-[#8b8b8b] space-y-2">
+        <BlurFade delay={0.1 * 3}>
+          <h2 className="text-xl font-bold tracking-tight text-black dark:text-white">Projects</h2>
+          <p className="dark:text-[#8b8b8b] text-black">collection</p>
+        </BlurFade>
+        <div className="max-w-7xl mx-auto py-8">
+          {/* This grid layout is mobile-first and responsive */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {projects.map((project, index) => (
-                <div className="mb-4 " key={project.id}>
-                  <div className={`transition-transform duration-300 ease-in-out transform hover:-translate-y-2`}>
-                    <CardSpotlight className="relative h-full w-full ">
-                      <div className="flex  justify-between ">
-                      <p className="text-base text-black dark:text-white font-bold  z-20">
-                        {project.Title}
-                      </p>
-                      
-                      <div className="flex gap-2 ">
-                      {project.github &&
-                      <Link href={project.github} className="referrer nopener">
-                        <GithubIcon/>
-                      </Link>
-                      }
-                      {project.liveLink &&
-                        <Link href={project.liveLink}>
-                          < Globe/>
-                        </Link>
-                      }
-                      </div>
-
-                      </div>
-                      <div className="text-[#383737] dark:text-neutral-400 mt-4 relative z-20 h-24 line-clamp-2">
-                        {project.Description}
-                      </div>
-                      <div className="mt-4">
-                        <p className="text-sm text-black dark:text-neutral-400 border-b-2  border-gray-600 inline-flex">Tech Stack</p>
-                        <ul className="flex flex-wrap gap-1 mt-2">
-                          {project.Tech.map((tech) => (
-                            <div key={tech.id} className="inline-flex items-center  rounded-sm border px-1.5 py-0.5 text-xs font-bold 
-                 bg-black dark:bg-white  text-white border-gray-500 dark:text-black  ">
-                              <li>
-                                {tech.name}
-                              </li>
-                            </ div>
-                          ))}
-                        </ul>
-                      </div>
-
-                    </CardSpotlight>
-                  </div>
-                </div>
+              <BlurFade delay={0.1 * (index + 4)} key={project.id}>
+                <ProjectCard project={project} />
+              </BlurFade>
             ))}
           </div>
         </div>
       </div>
     </section>
-  )
-}
-const CheckIcon = () => {
-  return (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="currentColor"
-      className="h-4 w-4 text-blue-500 mt-1 shrink-0"
-    >
-      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-      <path
-        d="M12 2c-.218 0 -.432 .002 -.642 .005l-.616 .017l-.299 .013l-.579 .034l-.553 .046c-4.785 .464 -6.732 2.411 -7.196 7.196l-.046 .553l-.034 .579c-.005 .098 -.01 .198 -.013 .299l-.017 .616l-.004 .318l-.001 .324c0 .218 .002 .432 .005 .642l.017 .616l.013 .299l.034 .579l.046 .553c.464 4.785 2.411 6.732 7.196 7.196l.553 .046l.579 .034c.098 .005 .198 .01 .299 .013l.616 .017l.642 .005l.642 -.005l.616 -.017l.299 -.013l.579 -.034l.553 -.046c4.785 -.464 6.732 -2.411 7.196 -7.196l.046 -.553l.034 -.579c.005 -.098 .01 -.198 .013 -.299l.017 -.616l.005 -.642l-.005 -.642l-.017 -.616l-.013 -.299l-.034 -.579l-.046 -.553c-.464 -4.785 -2.411 -6.732 -7.196 -7.196l-.553 -.046l-.579 -.034a28.058 28.058 0 0 0 -.299 -.013l-.616 -.017l-.318 -.004l-.324 -.001zm2.293 7.293a1 1 0 0 1 1.497 1.32l-.083 .094l-4 4a1 1 0 0 1 -1.32 .083l-.094 -.083l-2 -2a1 1 0 0 1 1.32 -1.497l.094 .083l1.293 1.292l3.293 -3.292z"
-        fill="currentColor"
-        strokeWidth="0"
-      />
-    </svg>
   );
-};
+}
