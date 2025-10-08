@@ -15,7 +15,7 @@ export default function Home() {
 
       <Navbar />
       <div
-        className="min-h-screen w-full flex flex-col overflow-y-auto items-center justify-start px-2">
+        className="min-h-screen w-full flex flex-col overflow-y-auto items-center justify-start px-6">
         <div
           className="max-w-2xl mx-auto  md:px-8 ">
           <div>
