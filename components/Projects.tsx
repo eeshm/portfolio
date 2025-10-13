@@ -127,8 +127,8 @@ export default function Projects() {
     <section className="pt-10">
       <div className="flex flex-col text-base text-[#8b8b8b] space-y-2">
         <BlurFade delay={0.1 * 3}>
-          <h2 className="text-xl font-bold tracking-tight text-black dark:text-white">Projects</h2>
-          <p className="dark:text-[#8b8b8b] text-black">collection</p>
+          <h2 className="text-xl font-bold tracking-tight text-black dark:text-white">projects</h2>
+          <p className="dark:text-[#8b8b8b] text-black text-sm">things i have built</p>
         </BlurFade>
         <div className="max-w-7xl mx-auto py-8">
           {/* This grid layout is mobile-first and responsive */}

@@ -17,7 +17,7 @@ export default function Home() {
       <div
         className="min-h-screen w-full flex flex-col overflow-y-auto items-center justify-start px-6">
         <div
-          className="max-w-2xl mx-auto  md:px-8 ">
+          className="max-w-[40rem] mx-auto  md:px-8 ">
           <div>
             <About />
           </div>

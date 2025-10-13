@@ -6,10 +6,10 @@ export default function About() {
             <BlurFade delay={0.10}>
                 <div className="items-start mb-8 ">
 
-                <div className='pt-15 md:pt-20'>
+                <div className='pt-25 md:pt-25'>
                 <div className="flex font-sans justify-between">
                     <div className="flex flex-col  gap-2 items-start">
-                        <span className="inline-block text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none">
+                        <span className="inline-block text-3xl font-bold sm:text-5xl xl:text-6xl/none">
                             Hi, I'm Eesh
                         </span>
                         <span className="inline-block text-base  md:text-lg max-w-[600px] text-black dark:text-white">
@@ -26,11 +26,12 @@ export default function About() {
             </BlurFade>
             <div className="max-w-3xl mx-auto text-base space-y-2 md:space-y-2  text-[#6c6c6c] ">
                 <BlurFade delay={0.10 * 2}>
-                    <h1 className="dark:text-white text-black text-xl tracking-tight font-medium">
-                        About
+                    <h1 className="dark:text-white text-black text-xl tracking-tight font-bold">
+                        about
                     </h1>
-                    <div className="text-sm md:text-base text-muted-foreground space-y-2 md:space-y-2">
-                        <p>trying hard in solving real-world problems</p>
+                    <div className=" text-sm text-muted-foreground space-y-3">
+                        <p>tldr; building interactive web applications</p>
+                        <p>i am a full-stack developer and exploring blockchain technology</p>
                         <p>focused on building solutions that people actually use</p>
                         <p>always learning, always improving</p>
                     </div>

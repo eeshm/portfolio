@@ -2,13 +2,13 @@ import { BlurFade } from "./ui/blur-fade";
 
 
 export default function Skills(){
-    const Skills = ["Next.js", "Typescript","React", "Postgres", "Supabse","Express", "Java","SQL","Web3.js", "Docker", 'Zustland', "Nest.js"];
+    const Skills = ["Next.js", "Typescript","React", "Postgres", "Supabase","Express", "Java","SQL","Docker", 'Zustland'];
     return(
         <section className="py-10">
         <div className="flex flex-col gap-y-3">
             <BlurFade delay={0.10*5}>
             <h2 className="text-xl font-bold tracking-tight mb-2"> 
-                Skills
+                skills
             </h2>
             <div className="flex flex-wrap gap-1">
                 {Skills.map((skill, index) => (
