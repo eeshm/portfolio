@@ -2,7 +2,7 @@ import Link from "next/link";
 import { Globe } from "lucide-react";
 import Image from "next/image";
 import { BlurFade } from "./ui/blur-fade";
-import Github from "../public/GithubLogo.png"; // Make sure this path is correct
+import Github from "../public/GithubLogo.png";
 
 const projects = [
   {
@@ -17,7 +17,7 @@ const projects = [
     ],
     liveLink: "https://gig-book.vercel.app",
     github: "https://github.com/eeshm/gig-book",
-    image: "/GigBook.png", // Ensure this image exists in your public folder
+    image: "/gigbook.png", 
   },
   {
     id: 2,
@@ -30,7 +30,7 @@ const projects = [
     ],
     liveLink: "https://dev-pick.vercel.app",
     github: "https://github.com/eeshm/devpick",
-    image: "/devpick.png", // Ensure this image exists in your public folder
+    image: "/devpick.png", 
   },
   {
     id: 3,
@@ -43,7 +43,7 @@ const projects = [
     ],
     liveLink: "https://banger-x.vercel.app",
     github: "https://github.com/eeshm/bangerx",
-    image: "/bangerx.png", // Ensure this image exists in your public folder
+    image: "/bangerx.png",
   },
   {
     id: 4,
@@ -67,7 +67,7 @@ const projects = [
   //   ],
   //   liveLink: "https://music-lib-eeshmidha.vercel.app/",
   //   github: "",
-  //   image: "/musiclib.png", // Ensure this image exists in your public folder
+  //   image: "/musiclib.png", 
   // },
 ];
 
