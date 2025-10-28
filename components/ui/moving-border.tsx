@@ -56,7 +56,7 @@ export function Button({
 
       <div
         className={cn(
-          " border border-slate-800 bg-slate-900/[0.8] text-sm text-white backdrop-blur-xl",
+          " border border-slate-800 bg-slate-900/[0.8] sm white backdrop-blur-xl",
           className,
         )}
         style={{
