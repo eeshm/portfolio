@@ -14,7 +14,6 @@ export default function About() {
             <section className="py-2">
                 <BlurFade delay={0.1}>
                     <div className="items-start px-4  mb-8 ">
-
                         <div className='pt-25 md:pt-25'>
                             <div className="flex font-sans justify-between">
                                 <div className="flex flex-col  gap-2 items-start">
