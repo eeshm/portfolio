@@ -47,7 +47,7 @@ export default function Footer(){
                             <span className="hidden md:inline text-xs">LinkedIn</span>
                         </Link>
                         <Link 
-                            href="mailto:eeshmidha08@gmail.com" 
+                            href="mailto:eeshmidha80@gmail.com" 
                             className="opacity-70 hover:opacity-100 transition-opacity duration-300 flex items-center gap-2"
                         >
                             <MaterialSymbolsMail className="w-4 h-4 dark:fill-white fill-black" />

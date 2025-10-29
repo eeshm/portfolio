@@ -136,7 +136,7 @@ const ProjectCard = ({ project }:any) => {
 export default function Projects() {
   return (
     <>
-      <section className="sm:px-12 px-4 py-2 pt-10">
+      <section className="sm:px-12 px-4 py-2">
       <div className="flex flex-col text-base text-[#8b8b8b] space-y-2">
         <BlurFade delay={0.1}>
           <h2 className="text-base  mb-3 opacity-70 mt-4 sm:mt-6">Projects</h2>

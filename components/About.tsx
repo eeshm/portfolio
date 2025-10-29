@@ -20,7 +20,7 @@ export default function About() {
                                     <span className="inline-block text-3xl font-medium tracking-tight sm:text-5xl xl:text-6xl/none">
                                         Hi, I'm Eesh
                                     </span>
-                                    <span className="opacity-40 text-xs sm:text-sm">
+                                    <span className="opacity-40 text-xs sm:text-sm ">
                                         21 | Full stack developer
                                     </span>
                                     <div className="flex gap-4 items-center mt-2">
@@ -59,7 +59,7 @@ export default function About() {
                         </div>
                         <br/>
                         <span className="dark:text-white/70 text-black/70  text-sm">
-                            You can always reach me at <Link href={"mailto:eeshmidha08@gmail.com"} className="underline decoration-wavy underline-offset-4 decoration-black/70 dark:decoration-white/70 hover:text-black dark:hover:text-white transition-all duration-300">eeshmidha08@gmail.com</Link>
+                            You can always reach me at <Link href={"mailto:eeshmidha80@gmail.com"} className="underline decoration-wavy underline-offset-4 decoration-black/70 dark:decoration-white/70 hover:text-black dark:hover:text-white transition-all duration-300">eeshmidha80@gmail.com</Link>
                         </span>
                     </BlurFade>
                 </div >

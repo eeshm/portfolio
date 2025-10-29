@@ -24,7 +24,7 @@ function Navbar({ className }: { className?: string }) {
                         <MdiLinkedin />
                     </Link>
 
-                    <Link href={"mailto:eeshmidha08@gmail.com"}  className="opacity-100 hover:opacity-70 duration-300 transition">
+                    <Link href={"mailto:@gmail.com"}  className="opacity-100 hover:opacity-70 duration-300 transition">
                         <MaterialSymbolsMail />
                     </Link>
                     <Link href={"https://drive.google.com/file/d/1LYji7Ueg8uuDERr6dNRF7EulkmGYwUfi/view"}  className="opacity-100 hover:opacity-70 duration-300 transition">
