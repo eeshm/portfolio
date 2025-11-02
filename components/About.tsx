@@ -30,7 +30,7 @@ export default function About() {
                                         <Link href={"https://linkedin.com/in/eesh-midha"}  className="opacity-100 hover:opacity-70 duration-300 transition">
                                             <MdiLinkedin className="dark:fill-white fill-black"/>
                                         </Link>
-                                        <Link href={"https://drive.google.com/file/d/1LYji7Ueg8uuDERr6dNRF7EulkmGYwUfi/view"}  className="opacity-100 hover:opacity-70 duration-300 transition">
+                                        <Link href={"https://drive.google.com/file/d/1nTF5836d24mcXQUQTrAxPNS5epWxIHRt/view"}  className="opacity-100 hover:opacity-70 duration-300 transition">
                                             <QlementineIconsResume16 className="dark:fill-white fill-black"/>
                                         </Link>
                                     </div>

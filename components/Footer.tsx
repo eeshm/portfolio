@@ -54,7 +54,7 @@ export default function Footer(){
                             <span className="hidden md:inline text-xs">Email</span>
                         </Link>
                         <Link 
-                            href="https://drive.google.com/file/d/1LYji7Ueg8uuDERr6dNRF7EulkmGYwUfi/view" 
+                            href="https://drive.google.com/file/d/1nTF5836d24mcXQUQTrAxPNS5epWxIHRt/view" 
                             target="_blank" 
                             rel="noopener noreferrer"
                             className="opacity-70 hover:opacity-100 transition-opacity duration-300 flex items-center gap-2"
