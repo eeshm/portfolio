@@ -7,6 +7,8 @@ import { MaterialSymbolsMail } from "./ui/mail"
 import { QlementineIconsResume16 } from "./ui/resume"
 import { ModeToggle } from "./ui/toggle-button"
 import { ClipboardCopy, ClipboardIcon, Link2 } from "lucide-react"
+import NewMailIcon from "./ui/MessageIcon"
+import MessageIcon from "./ui/MessageIcon"
 
 export default function About() {
     return (
@@ -17,8 +19,8 @@ export default function About() {
                         <div className='pt-25 md:pt-25'>
                             <div className="flex font-sans justify-between">
                                 <div className="flex flex-col  gap-2 items-start">
-                                    <span className="inline-block text-3xl font-medium tracking-tight sm:text-5xl xl:text-6xl/none">
-                                        Hi, I'm Eesh
+                                    <span className="inline-block text-3xl font-bold sm:text-5xl xl:text-5xl/none">
+                                        hi, eesh here
                                     </span>
                                     <span className="opacity-40 text-xs sm:text-sm ">
                                         21 | Full stack developer
@@ -51,16 +53,29 @@ export default function About() {
                         <h1 className="mb-3 opacity-70 mt-4 sm:mt-6 ">
                             About
                         </h1>
-                        <div className="text-sm  dark:text-white/70 text-black/70 leading-relaxed space-y-3">
-                            <p>TL;DR: I build interactive web applications</p>
-                            <p>I'm a full-stack developer currently exploring blockchain technology</p>
-                            <p>Focused on building solutions that people actually use</p>
-                            <p>Always learning, always improving</p>
+                        <div className="text-muted-foreground text-sm font-sans leading-relaxed space-y-3">
+                            <p>
+                                I'm a <span className="dark:text-white text-black">Full-stack developer</span> with a sense of design skills that sets me apart from most developers. I work on both frontend and backend development. I believe in building something that makes a difference.
+                            </p>
+                            <p>
+                                Always looking for new opportunities to learn and grow.
+                                {/* create me green dot pulsating here with animation  */}
+                               
+                            </p>
                         </div>
-                        <br/>
-                        <span className="dark:text-white/70 text-black/70  text-sm">
-                            You can always reach me at <Link href={"mailto:eeshmidha80@gmail.com"} className="underline decoration-wavy underline-offset-4 decoration-black/70 dark:decoration-white/70 hover:text-black dark:hover:text-white transition-all duration-300">eeshmidha80@gmail.com</Link>
+
+                        <div className="mt-4">
+                        <span className="text-muted-foreground text-sm ">
+                            You can always reach me at <Link href={"mailto:eeshmidha80@gmail.com"} className="underline decoration-wavy underline-offset-4 decoration-black/70 dark:decoration-white/70 hover:text-black dark:hover:text-white transition-all duration-300">eeshmidha80@gmail.com </Link>
+
                         </span>
+                        <span className="inline-flex text-xs "> or </span>  
+                        <Link href="https://twitter.com/messages/compose?recipient_id=1088330711776411650" target="_blank" rel="noopener noreferrer">
+                        <span className="inline-flex items-center justify-center ml-1 gap-2 whitespace-nowrap rounded-md font-medium transition-colors disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-3.5 [&_svg]:shrink-0 bg-cardColor dark:text-white text-black hover:bg-card py-2 dark:shadow-[0px_32px_64px_-16px_#0000004c,0px_16px_32px_-8px_#0000004c,0px_8px_16px_-4px_#0000003d,0px_4px_8px_-2px_#0000003d,0px_-8px_16px_-1px_#00000029,0px_2px_4px_-1px_#0000003d,0px_0px_0px_1px_#000000,inset_0px_0px_0px_1px_#ffffff14,inset_0px_1px_0px_#ffffff33]  border-1 h-6 px-2.5 text-xs hover:text-brand">
+                                <MessageIcon/> Twitter DM
+                        </span>
+                        </Link>
+                        </div>
                     </BlurFade>
                 </div >
             </section>

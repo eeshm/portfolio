@@ -73,7 +73,7 @@ const projects = [
 
 const ProjectCard = ({ project }:any) => {
   return (
-    <div className="relative overflow-hidden h-full flex flex-col rounded-lg bg-white dark:bg-[#0a0a0a] shadow-md hover:shadow-xl transition-shadow duration-300 ease-in-out border border-gray-200 dark:border-zinc-800">
+    <div className="relative overflow-hidden h-full flex flex-col rounded-lg bg-white dark:bg-[#0a0a0a] shadow-md hover:shadow-xl transition-shadow duration-300 ease-in-out border border-gray-200 dark:border-white/10">
       {/* Project Image */}
       {project.image && (
         <div className="relative h-48 w-full overflow-hidden rounded-t-lg">
@@ -88,7 +88,7 @@ const ProjectCard = ({ project }:any) => {
 
       <div className="p-4 flex flex-col flex-1"> {/* Use flex-1 here to ensure this div fills the parent's height */}
         {/* Title */}
-        <h3 className="text-sm text-white mb-3 mt-4 sm:mt-2">
+        <h3 className="text-sm text-white mb-3  ">
           {project.Title}
         </h3>
 
