@@ -88,7 +88,7 @@ const ProjectCard = ({ project }:any) => {
 
       <div className="p-4 flex flex-col flex-1"> {/* Use flex-1 here to ensure this div fills the parent's height */}
         {/* Title */}
-        <h3 className="text-sm text-white mb-3  ">
+        <h3 className="text-sm dark:text-white text-black mb-3  ">
           {project.Title}
         </h3>
 

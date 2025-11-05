@@ -12,7 +12,7 @@ export default function Home() {
     <>
       {/* <GridBackgroundDemo /> */}
       <div
-        className="min-h-screen relative max-w-4xl  mx-auto font-sans">
+        className="min-h-screen relative max-w-4xl mx-auto font-sans">
           <div className="absolute left-0 top-0 w-[60px] h-full overflow-hidden sm:block hidden">
             <div className="absolute dark:opacity-[0.04] opacity-[0.06] inset-0 w-[60px] h-full border dark:border-[#eee] border-[#000]/70" 
             style={{
@@ -26,7 +26,7 @@ export default function Home() {
               }}></div>
           </div>
         <div
-          className="mx-auto sm:w-[calc(100%-120px)] w-full max-w-4xl pt-8 ">
+          className="mx-auto sm:w-[calc(100%-120px)] w-full max-w-4xl ">
           <div>
             <About />
           </div>

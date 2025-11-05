@@ -3,11 +3,7 @@ import { BlurFade } from "./ui/blur-fade"
 import Link from "next/link"
 import { MdiGithub } from "./ui/github"
 import { MdiLinkedin } from "./ui/linkedin"
-import { MaterialSymbolsMail } from "./ui/mail"
 import { QlementineIconsResume16 } from "./ui/resume"
-import { ModeToggle } from "./ui/toggle-button"
-import { ClipboardCopy, ClipboardIcon, Link2 } from "lucide-react"
-import NewMailIcon from "./ui/MessageIcon"
 import MessageIcon from "./ui/MessageIcon"
 
 export default function About() {
@@ -16,7 +12,7 @@ export default function About() {
             <section className="py-2">
                 <BlurFade delay={0.1}>
                     <div className="items-start px-4  mb-8 ">
-                        <div className='pt-25 md:pt-25'>
+                        <div className='pt-10 md:pt-25'>
                             <div className="flex font-sans justify-between">
                                 <div className="flex flex-col  gap-2 items-start">
                                     <span className="inline-block text-3xl font-bold sm:text-5xl xl:text-5xl/none">
