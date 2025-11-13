@@ -54,9 +54,9 @@ export default function About() {
                                 I'm a <span className="dark:text-white text-black">Full-stack developer</span> with a sense of design skills that sets me apart from most developers. I work on both frontend and backend development. I believe in building something that makes a difference.
                             </p>
                             <p>
-                                Always looking for new opportunities to learn and grow.
+                                open for work  
                                 {/* create me green dot pulsating here with animation  */}
-                               
+                                <div className="inline-block size-2 bg-green-500 rounded-full ml-2 animate-pulse" />
                             </p>
                         </div>
 
