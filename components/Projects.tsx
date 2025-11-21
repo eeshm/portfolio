@@ -19,8 +19,22 @@ const projects = [
     github: "https://github.com/eeshm/gig-book",
     image: "/gigbook.png", 
   },
-  {
+      {
     id: 2,
+    Title: "Stash",
+    Description: "stash is a minimal, in-memory bookmark manager focused on privacy and speed. It’s fully keyboard-first, ad-free, and tracking-free for a distraction-free workflow. Your links stay completely under your control.",
+    Tech: [
+      { id: 1, name: "React" },
+      { id: 2, name: "Bun" },
+      { id: 3, name: "Tailwind CSS" },
+      { id: 4, name: "Shadcn UI" }
+    ],
+    liveLink: "https://stsh.vercel.app",
+    github: "https://github.com/eeshm/stsh",
+    image: "/stash.png",
+  },
+  {
+    id: 3,
     Title: "DevPick",
     Description: "DevPick helps developers and teams cut through the noise to make smarter tech decisions. Explore, compare, and choose the right tools—no hype, just clarity. Grew to 3000+ users through organic reach.",
     Tech: [
@@ -33,7 +47,7 @@ const projects = [
     image: "/devpick.png", 
   },
   {
-    id: 3,
+    id: 4,
     Title: "BangerX",
     Description: "X search, but on steroids. An unfiltered engine that finds the signal in the noise, letting you instantly pull viral hits by any topic or creator.",
     Tech: [
@@ -45,8 +59,9 @@ const projects = [
     github: "https://github.com/eeshm/bangerx",
     image: "/bangerx.png",
   },
+
   {
-    id: 4,
+    id: 5,
     Title: "ReachInbox",
     Description: "A Node.js CLI application that integrates multiple IMAP email accounts, uses AI to categorize incoming emails, indexes them in Elasticsearch, and sends Slack notifications and webhook events for relevant leads.",
     Tech: [
@@ -81,14 +96,14 @@ const ProjectCard = ({ project }:any) => {
             src={project.image}
             alt={project.Title}
             layout="fill"
-            className="transition-transform object-top  object-cover duration-300 group-hover:scale-105"
+            className="transition-transform object-top   object-contain md:object-contain duration-300 group-hover:scale-105"
           />
         </div>
       )}
 
       <div className="p-4 flex flex-col flex-1"> {/* Use flex-1 here to ensure this div fills the parent's height */}
         {/* Title */}
-        <h3 className="text-sm dark:text-white text-black mb-3  ">
+        <h3 className="text-sm dark:text-white text-black mb-2  ">
           {project.Title}
         </h3>
 
