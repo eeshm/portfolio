@@ -46,6 +46,19 @@ const projects = [
     github: "https://github.com/eeshm/devpick",
     image: "/devpick.png", 
   },
+    {
+    id: 6,
+    Title: "Kissan Chemicals",
+    Description: "A modern landing website for a agricultural chemicals shop. Showcasing products, services, and company information with a clean, professional design tailored for the agricultural industry.",
+    Tech: [
+      { id: 1, name: "Next.js" },
+      { id: 2, name: "Typescript" },
+      { id: 3, name: "Tailwind CSS" }
+    ],
+    liveLink: "https://kissanchemicals.vercel.app",
+    github: "",
+    image:"/kissan.png",
+  },
   {
     id: 4,
     Title: "BangerX",
@@ -72,6 +85,7 @@ const projects = [
     liveLink: "",
     github: "https://github.com/eeshm/reachbox-eesh",
   },
+
   // {
   //   id: 5,
   //   Title: "Music Lib (UI)",
@@ -96,7 +110,7 @@ const ProjectCard = ({ project }:any) => {
             src={project.image}
             alt={project.Title}
             layout="fill"
-            className="transition-transform object-top   object-contain md:object-contain duration-300 group-hover:scale-105"
+            className="transition-transform object-top   max-sm:object-contain md:object-contain duration-300 group-hover:scale-105"
           />
         </div>
       )}
