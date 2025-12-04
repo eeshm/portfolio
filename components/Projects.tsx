@@ -110,7 +110,7 @@ const ProjectCard = ({ project }:any) => {
             src={project.image}
             alt={project.Title}
             layout="fill"
-            className="transition-transform object-top   max-sm:object-contain md:object-contain duration-300 group-hover:scale-105"
+            className="transition-transform object-top   max-sm:object-cover md:object-contain duration-300 group-hover:scale-105"
           />
         </div>
       )}
