@@ -4,6 +4,7 @@ import { GridBackgroundDemo } from "@/components/ui/grid-background";
 import About from "@/components/About";
 import Projects from "@/components/Projects";
 import Skills from "@/components/Skills";
+import GitHubContributions from "@/components/GitHubContributions";
 import Footer from "@/components/Footer";
 import { BlurFade } from "@/components/ui/blur-fade";
 
@@ -35,6 +36,9 @@ export default function Home() {
           </div>
           <div>
           <Skills />
+          </div>
+          <div>
+          <GitHubContributions />
           </div>
           <Footer />
         </div>

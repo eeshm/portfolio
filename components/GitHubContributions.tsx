@@ -21,7 +21,6 @@ interface PullRequest {
   created_at: string;
   state: string;
 }
-
 const FormattedDate = ({ date }: { date: string }) => {
   const formattedDate = useMemo(() => {
     return new Date(date).toLocaleDateString('en-US', { 
