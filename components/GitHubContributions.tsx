@@ -5,21 +5,50 @@ import { BlurFade } from "./ui/blur-fade";
 import Link from "next/link";
 import Image from "next/image";
 
+interface RepositoryOwner {
+  login: string;
+  avatar_url: string;
+  type: 'User' | 'Organization';
+}
+
+interface Repository {
+  full_name: string;
+  owner: RepositoryOwner;
+}
+
 interface PullRequest {
   id: number;
   title: string;
   html_url: string;
   repository_url: string;
-  repository: {
-    full_name: string;
-    owner: {
-      login: string;
-      avatar_url: string;
-      type: string; // 'Organization' or 'User'
-    };
-  };
+  repository: Repository;
   created_at: string;
   state: string;
+  merged_at: string | null;
+}
+
+interface GitHubSearchResponse {
+  items: GitHubPullRequest[];
+}
+
+interface GitHubPullRequest {
+  id: number;
+  title: string;
+  html_url: string;
+  repository_url: string;
+  created_at: string;
+  state: string;
+  merged_at: string | null;
+}
+
+interface GitHubRepository {
+  url: string;
+  full_name: string;
+  owner: {
+    type: 'User' | 'Organization';
+    login: string;
+    avatar_url: string;
+  };
 }
 const FormattedDate = ({ date }: { date: string }) => {
   const formattedDate = useMemo(() => {
@@ -40,9 +69,8 @@ export default function GitHubContributions() {
   const [contributions, setContributions] = useState<PullRequest[]>([]);
   const [loading, setLoading] = useState(true);
 
-  const fetchContributions = useCallback(async () => {
+  const fetchContributions = useCallback(async (): Promise<void> => {
     try {
-      // Fetch merged pull requests by the user
       const response = await fetch('https://api.github.com/search/issues?q=author:eeshm+type:pr+is:merged&sort=updated&order=desc&per_page=30', {
         headers: {
           'Accept': 'application/vnd.github.v3+json',
@@ -50,37 +78,39 @@ export default function GitHubContributions() {
       });
 
       if (response.ok) {
-        const data = await response.json();
-        const prs: any[] = data.items || [];
+        const data = (await response.json()) as GitHubSearchResponse;
+        const prs: GitHubPullRequest[] = data.items || [];
         
-        const repoUrls: string[] = [...new Set(prs.map((pr: any) => pr.repository_url))];
+        const repoUrls: string[] = [...new Set(prs.map((pr) => pr.repository_url))];
         
-        const repoDetailsPromises = repoUrls.map(async (repoUrl: string) => {
+        const repoDetailsPromises = repoUrls.map(async (repoUrl: string): Promise<GitHubRepository | null> => {
           const repoResponse = await fetch(repoUrl, {
             headers: {
               'Accept': 'application/vnd.github.v3+json',
             },
           });
           if (repoResponse.ok) {
-            return await repoResponse.json();
+            return (await repoResponse.json()) as GitHubRepository;
           }
           return null;
         });
 
-        const repoDetails = (await Promise.all(repoDetailsPromises)).filter(Boolean);
+        const repoDetails = (await Promise.all(repoDetailsPromises)).filter(
+          (repo): repo is GitHubRepository => repo !== null
+        );
         
-        const repoOwnerMap = new Map();
-        repoDetails.forEach((repo: any) => {
+        const repoOwnerMap = new Map<string, RepositoryOwner & { full_name: string }>();
+        repoDetails.forEach((repo) => {
           repoOwnerMap.set(repo.url, {
-            type: repo.owner?.type,
-            login: repo.owner?.login,
-            avatar_url: repo.owner?.avatar_url,
+            type: repo.owner.type,
+            login: repo.owner.login,
+            avatar_url: repo.owner.avatar_url,
             full_name: repo.full_name,
           });
         });
         
         const orgPRs = prs
-          .map((pr: any) => {
+          .map((pr): PullRequest | null => {
             const repoInfo = repoOwnerMap.get(pr.repository_url);
             if (!repoInfo) return null;
             
@@ -99,14 +129,16 @@ export default function GitHubContributions() {
               },
               created_at: pr.created_at,
               state: pr.state,
+              merged_at: pr.merged_at,
             };
           })
-          .filter((pr: PullRequest | null) => 
-            pr && 
+          .filter((pr): pr is PullRequest => 
+            pr !== null && 
+            pr.merged_at !== null &&
             pr.repository.owner.type === 'Organization' && 
             pr.repository.owner.login !== 'eeshm'
           )
-          .slice(0, 10) as PullRequest[];
+          .slice(0, 10);
         
         setContributions(orgPRs);
       }
@@ -186,11 +218,6 @@ export default function GitHubContributions() {
                         <h3 className="text-sm font-semibold dark:text-white text-black group-hover:underline line-clamp-2">
                           {pr.title}
                         </h3>
-                        {pr.state === 'merged' && (
-                          <span className="inline-flex items-center mt-2 text-xs px-2 py-0.5 rounded-sm bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-300">
-                            Merged
-                          </span>
-                        )}
                       </div>
                     </div>
                   </Link>
