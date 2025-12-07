@@ -18,6 +18,25 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Eesh Midha",
   description: "Eesh Midha - Portfolio",
+  openGraph: {
+    title: "Eesh Midha",
+    description: "Eesh Midha - Portfolio",
+    images: [
+      {
+        url: "/image.png",
+        width: 1200,
+        height: 630,
+        alt: "Eesh Midha Portfolio",
+      },
+    ],
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Eesh Midha",
+    description: "Eesh Midha - Portfolio",
+    images: ["/image.png"],
+  },
 };
 
 export default function RootLayout({
