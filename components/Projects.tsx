@@ -8,7 +8,7 @@ const projects = [
   {
     id: 1,
     Title: "GigBook",
-    Description: "GigBook is a modern full-stack platform that connects artists, performers, and venues — like Fiverr, but for gigs. Artists can showcase their talent, and venues can find and book the perfect act in minutes.",
+    Description: "gigBook is a full-stack platform that connects artists, performers, and venues — like fiverr, but for gigs. artists can showcase their talent, and venues can find and book the perfect act in minutes.",
     Tech: [
       { id: 1, name: "Express" },
       { id: 2, name: "Next.js" },
@@ -21,6 +21,19 @@ const projects = [
   },
       {
     id: 2,
+    Title: "SolPlay",
+    Description: "currently working on a paper trading app for solana. (building)",
+    Tech: [
+      { id: 1, name: "Express" },
+      { id: 2, name: "Postgres" },
+      { id: 3, name: "Redis" },
+      { id: 4, name: "Next.js" }
+    ],
+    github: "https://github.com/eeshm/trade",
+    image: "/SolPlay.png",
+  },
+      {
+    id: 8,
     Title: "Stash",
     Description: "stash is a minimal, in-memory bookmark manager focused on privacy and speed. It’s fully keyboard-first, ad-free, and tracking-free for a distraction-free workflow. Your links stay completely under your control.",
     Tech: [
@@ -36,7 +49,7 @@ const projects = [
   {
     id: 3,
     Title: "DevPick",
-    Description: "DevPick helps developers and teams cut through the noise to make smarter tech decisions. Explore, compare, and choose the right tools—no hype, just clarity. Grew to 3000+ users through organic reach.",
+    Description: "devpick helps developers and teams cut through the noise to make smarter tech decisions. Explore, compare, and choose the right tools—no hype, just clarity. Grew to 3000+ users through organic reach.",
     Tech: [
       { id: 1, name: "Next.js" },
       { id: 2, name: "Typescript" },
@@ -85,19 +98,6 @@ const projects = [
     liveLink: "",
     github: "https://github.com/eeshm/reachbox-eesh",
   },
-
-  // {
-  //   id: 5,
-  //   Title: "Music Lib (UI)",
-  //   Description: "A sleek, responsive music library UI with smooth animations, built with TypeScript to showcase frontend skills.",
-  //   Tech: [
-  //     { id: 1, name: "Next.js" },
-  //     { id: 2, name: "Taiwind CSS" }
-  //   ],
-  //   liveLink: "https://music-lib-eeshmidha.vercel.app/",
-  //   github: "",
-  //   image: "/musiclib.png", 
-  // },
 ];
 
 const ProjectCard = ({ project }:any) => {
