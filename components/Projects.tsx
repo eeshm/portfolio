@@ -6,6 +6,19 @@ import Github from "../public/GithubLogo.png";
 
 const projects = [
   {
+    id: 2,
+    Title: "paper.fun",
+    Description: "currently working on a paper trading app for solana. (building)",
+    Tech: [
+      { id: 1, name: "Express" },
+      { id: 2, name: "Postgres" },
+      { id: 3, name: "Redis" },
+      { id: 4, name: "Next.js" }
+    ],
+    github: "https://github.com/eeshm/paper.fun",
+    image: "/paperfun.png",
+  },
+  {
     id: 1,
     Title: "GigBook",
     Description: "gigBook is a full-stack platform that connects artists, performers, and venues — like fiverr, but for gigs. artists can showcase their talent, and venues can find and book the perfect act in minutes.",
@@ -19,19 +32,7 @@ const projects = [
     github: "https://github.com/eeshm/gig-book",
     image: "/gigbook.png",
   },
-  {
-    id: 2,
-    Title: "paper.fun",
-    Description: "currently working on a paper trading app for solana. (building)",
-    Tech: [
-      { id: 1, name: "Express" },
-      { id: 2, name: "Postgres" },
-      { id: 3, name: "Redis" },
-      { id: 4, name: "Next.js" }
-    ],
-    github: "https://github.com/eeshm/paper.fun",
-    image: "/paperfun.png",
-  },
+
   {
     id: 8,
     Title: "Stash",
@@ -86,18 +87,18 @@ const projects = [
     image: "/bangerx.png",
   },
 
-  {
-    id: 5,
-    Title: "ReachInbox",
-    Description: "A Node.js CLI application that integrates multiple IMAP email accounts, uses AI to categorize incoming emails, indexes them in Elasticsearch, and sends Slack notifications and webhook events for relevant leads.",
-    Tech: [
-      { id: 1, name: "Node.js" },
-      { id: 2, name: "OpenAI" },
-      { id: 3, name: "IMAP" }
-    ],
-    liveLink: "",
-    github: "https://github.com/eeshm/reachbox-eesh",
-  },
+  // {
+  //   id: 5,
+  //   Title: "ReachInbox",
+  //   Description: "A Node.js CLI application that integrates multiple IMAP email accounts, uses AI to categorize incoming emails, indexes them in Elasticsearch, and sends Slack notifications and webhook events for relevant leads.",
+  //   Tech: [
+  //     { id: 1, name: "Node.js" },
+  //     { id: 2, name: "OpenAI" },
+  //     { id: 3, name: "IMAP" }
+  //   ],
+  //   liveLink: "",
+  //   github: "https://github.com/eeshm/reachbox-eesh",
+  // },
 ];
 
 const ProjectCard = ({ project }: any) => {
@@ -168,7 +169,7 @@ export default function Projects() {
       <section className="sm:px-12 px-4 py-2">
         <div className="flex flex-col text-base text-[#8b8b8b] space-y-2">
           <BlurFade delay={0.1}>
-            <h2 className="text-base  mb-3 opacity-70 mt-4 sm:mt-6">Projects</h2>
+            <h2 className="text-base  mb-1 mt-4 sm:mt-6">Projects</h2>
             <p className="text-sm  dark:text-white/70 text-black/70 leading-relaxed">things i have built</p>
           </BlurFade>
           <div className="max-w-7xl mx-auto ">

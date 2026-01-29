@@ -2,6 +2,7 @@
 
 import { useEffect, useState, useCallback, useMemo } from "react";
 import { BlurFade } from "./ui/blur-fade";
+import { Button } from "./ui/button";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -28,6 +29,7 @@ interface PullRequest {
 }
 
 interface GitHubSearchResponse {
+  total_count: number;
   items: GitHubPullRequest[];
 }
 
@@ -52,9 +54,9 @@ interface GitHubRepository {
 }
 const FormattedDate = ({ date }: { date: string }) => {
   const formattedDate = useMemo(() => {
-    return new Date(date).toLocaleDateString('en-US', { 
-      year: 'numeric', 
-      month: 'short' 
+    return new Date(date).toLocaleDateString('en-US', {
+      year: 'numeric',
+      month: 'short'
     });
   }, [date]);
 
@@ -68,10 +70,20 @@ const FormattedDate = ({ date }: { date: string }) => {
 export default function GitHubContributions() {
   const [contributions, setContributions] = useState<PullRequest[]>([]);
   const [loading, setLoading] = useState(true);
+  const [expanding, setExpanding] = useState(false);
+  const [isExpanded, setIsExpanded] = useState(false);
+  const [hasMore, setHasMore] = useState(false);
 
-  const fetchContributions = useCallback(async (): Promise<void> => {
+  const fetchContributions = useCallback(async (fetchAll: boolean = false): Promise<void> => {
+    if (fetchAll) {
+      setExpanding(true);
+    } else {
+      setLoading(true);
+    }
+
     try {
-      const response = await fetch('https://api.github.com/search/issues?q=author:eeshm+type:pr+is:merged&sort=updated&order=desc&per_page=30', {
+      const limit = fetchAll ? 100 : 30;
+      const response = await fetch(`https://api.github.com/search/issues?q=author:eeshm+type:pr+is:merged&sort=updated&order=desc&per_page=${limit}`, {
         headers: {
           'Accept': 'application/vnd.github.v3+json',
         },
@@ -80,9 +92,12 @@ export default function GitHubContributions() {
       if (response.ok) {
         const data = (await response.json()) as GitHubSearchResponse;
         const prs: GitHubPullRequest[] = data.items || [];
-        
+
+        const fetchedCount = prs.length;
+        const potentialMore = fetchedCount === limit;
+
         const repoUrls: string[] = [...new Set(prs.map((pr) => pr.repository_url))];
-        
+
         const repoDetailsPromises = repoUrls.map(async (repoUrl: string): Promise<GitHubRepository | null> => {
           const repoResponse = await fetch(repoUrl, {
             headers: {
@@ -98,7 +113,7 @@ export default function GitHubContributions() {
         const repoDetails = (await Promise.all(repoDetailsPromises)).filter(
           (repo): repo is GitHubRepository => repo !== null
         );
-        
+
         const repoOwnerMap = new Map<string, RepositoryOwner & { full_name: string }>();
         repoDetails.forEach((repo) => {
           repoOwnerMap.set(repo.url, {
@@ -108,12 +123,12 @@ export default function GitHubContributions() {
             full_name: repo.full_name,
           });
         });
-        
+
         const orgPRs = prs
           .map((pr): PullRequest | null => {
             const repoInfo = repoOwnerMap.get(pr.repository_url);
             if (!repoInfo) return null;
-            
+
             return {
               id: pr.id,
               title: pr.title,
@@ -132,26 +147,35 @@ export default function GitHubContributions() {
               merged_at: pr.merged_at,
             };
           })
-          .filter((pr): pr is PullRequest => 
-            pr !== null && 
+          .filter((pr): pr is PullRequest =>
+            pr !== null &&
             pr.merged_at !== null &&
-            pr.repository.owner.type === 'Organization' && 
+            pr.repository.owner.type === 'Organization' &&
             pr.repository.owner.login !== 'eeshm'
-          )
-          .slice(0, 10);
-        
+          );
+
         setContributions(orgPRs);
+
+        if (fetchAll) {
+          setIsExpanded(true);
+          setHasMore(false);
+        } else {
+          setHasMore(potentialMore || orgPRs.length > 6);
+        }
       }
     } catch (error) {
       console.error('Error fetching GitHub contributions:', error);
     } finally {
       setLoading(false);
+      setExpanding(false);
     }
   }, []);
 
   useEffect(() => {
     fetchContributions();
   }, [fetchContributions]);
+
+  const displayedContributions = isExpanded ? contributions : contributions.slice(0, 6);
 
   if (loading) {
     return (
@@ -186,7 +210,7 @@ export default function GitHubContributions() {
               pull requests to open source organizations
             </p>
             <div className="flex flex-col gap-3">
-              {contributions.map((pr, index) => (
+              {displayedContributions.map((pr, index) => (
                 <BlurFade key={pr.id} delay={0.1 + index * 0.1}>
                   <Link
                     href={pr.html_url}
@@ -224,6 +248,18 @@ export default function GitHubContributions() {
                 </BlurFade>
               ))}
             </div>
+            {(!isExpanded && hasMore) && (
+              <div className="flex justify-center mt-4">
+                <Button
+                  variant="outline"
+                  onClick={() => fetchContributions(true)}
+                  disabled={expanding}
+                  className="w-full sm:w-auto"
+                >
+                  {expanding ? "Loading..." : "Load More"}
+                </Button>
+              </div>
+            )}
           </BlurFade>
         </div>
       </section>
