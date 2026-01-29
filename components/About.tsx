@@ -15,7 +15,7 @@ export default function About() {
                         <div className='pt-10 md:pt-25'>
                             <div className="flex font-sans justify-between">
                                 <div className="flex flex-col  gap-2 items-start">
-                                    <span className="inline-block text-3xl font-bold ">
+                                    <span className="inline-block text-3xl font-bold sm:text-5xl/none ">
                                         hi, eesh here
                                     </span>
                                     <span className="opacity-40 text-xs sm:text-sm ">
@@ -33,9 +33,9 @@ export default function About() {
                                         </Link>
                                     </div>
                                 </div>
-                                {/* <div className="relative w-[120px] h-[120px] rounded-full overflow-hidden">
+                                <div className="relative w-[120px] h-[120px] rounded-full overflow-hidden">
                                     <Image src={"/Picture.jpg"} alt="eesh..." width={500} height={500} className="rounded object-fill" />
-                                </div> */}
+                                </div>
                             </div>
                         </div>
                     </div>
