@@ -17,11 +17,11 @@ const projects = [
     ],
     liveLink: "https://gig-book.vercel.app",
     github: "https://github.com/eeshm/gig-book",
-    image: "/gigbook.png", 
+    image: "/gigbook.png",
   },
-      {
+  {
     id: 2,
-    Title: "SolPlay",
+    Title: "paper.fun",
     Description: "currently working on a paper trading app for solana. (building)",
     Tech: [
       { id: 1, name: "Express" },
@@ -29,10 +29,10 @@ const projects = [
       { id: 3, name: "Redis" },
       { id: 4, name: "Next.js" }
     ],
-    github: "https://github.com/eeshm/trade",
-    image: "/SolPlay.png",
+    github: "https://github.com/eeshm/paper.fun",
+    image: "/paperfun.png",
   },
-      {
+  {
     id: 8,
     Title: "Stash",
     Description: "stash is a minimal, in-memory bookmark manager focused on privacy and speed. It’s fully keyboard-first, ad-free, and tracking-free for a distraction-free workflow. Your links stay completely under your control.",
@@ -57,9 +57,9 @@ const projects = [
     ],
     liveLink: "https://dev-pick.vercel.app",
     github: "https://github.com/eeshm/devpick",
-    image: "/devpick.png", 
+    image: "/devpick.png",
   },
-    {
+  {
     id: 6,
     Title: "Kissan Chemicals",
     Description: "A modern landing website for a agricultural chemicals shop. Showcasing products, services, and company information with a clean, professional design tailored for the agricultural industry.",
@@ -70,7 +70,7 @@ const projects = [
     ],
     liveLink: "https://kissanchemicals.vercel.app",
     github: "",
-    image:"/kissan.png",
+    image: "/kissan.png",
   },
   {
     id: 4,
@@ -100,7 +100,7 @@ const projects = [
   },
 ];
 
-const ProjectCard = ({ project }:any) => {
+const ProjectCard = ({ project }: any) => {
   return (
     <div className="relative overflow-hidden h-full flex flex-col rounded-lg bg-white dark:bg-[#0a0a0a] shadow-md hover:shadow-xl transition-shadow duration-300 ease-in-out border border-gray-200 dark:border-white/10">
       {/* Project Image */}
@@ -130,7 +130,7 @@ const ProjectCard = ({ project }:any) => {
         <div className="mt-auto pt-2">
           {/* Tech Stack */}
           <div className="flex flex-wrap gap-2 mb-3">
-            {project.Tech.map((tech:any) => (
+            {project.Tech.map((tech: any) => (
               <span
                 key={tech.id}
                 className="inline-flex items-center rounded-sm border font-semibold transition-colors focus:outline-none border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80 px-1 py-0 text-[10px]"
@@ -166,26 +166,26 @@ export default function Projects() {
   return (
     <>
       <section className="sm:px-12 px-4 py-2">
-      <div className="flex flex-col text-base text-[#8b8b8b] space-y-2">
-        <BlurFade delay={0.1}>
-          <h2 className="text-base  mb-3 opacity-70 mt-4 sm:mt-6">Projects</h2>
-          <p className="text-sm  dark:text-white/70 text-black/70 leading-relaxed">things i have built</p>
-        </BlurFade>
-        <div className="max-w-7xl mx-auto ">
-          {/* This grid layout is mobile-first and responsive */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {projects.map((project, index) => (
-              <BlurFade delay={0.1 + index * 0.1} key={project.id}>
-                <ProjectCard project={project} />
-              </BlurFade>
-            ))}
+        <div className="flex flex-col text-base text-[#8b8b8b] space-y-2">
+          <BlurFade delay={0.1}>
+            <h2 className="text-base  mb-3 opacity-70 mt-4 sm:mt-6">Projects</h2>
+            <p className="text-sm  dark:text-white/70 text-black/70 leading-relaxed">things i have built</p>
+          </BlurFade>
+          <div className="max-w-7xl mx-auto ">
+            {/* This grid layout is mobile-first and responsive */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              {projects.map((project, index) => (
+                <BlurFade delay={0.1 + index * 0.1} key={project.id}>
+                  <ProjectCard project={project} />
+                </BlurFade>
+              ))}
+            </div>
           </div>
         </div>
-      </div>
-    </section>
-    <BlurFade delay={0.5}>
-      <div className="border-b border-dashed dark:border-white/[0.06] border-black/[0.06] mt-6"></div>
-    </BlurFade>
+      </section>
+      <BlurFade delay={0.5}>
+        <div className="border-b border-dashed dark:border-white/[0.06] border-black/[0.06] mt-6"></div>
+      </BlurFade>
     </>
   );
 }
