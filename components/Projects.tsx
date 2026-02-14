@@ -8,13 +8,15 @@ const projects = [
   {
     id: 2,
     Title: "paper.fun",
-    Description: "currently working on a paper trading app for solana. (building)",
+    Description: "paper.fun is a backend-focused paper trading platform for the SOL/USD market that simulates real trading behavior using live prices.It’s designed around deterministic execution, transactional correctness, and concurrency-safe order handling.",
     Tech: [
       { id: 1, name: "Express" },
       { id: 2, name: "Postgres" },
       { id: 3, name: "Redis" },
-      { id: 4, name: "Next.js" }
+      { id: 4, name: "Next.js" },
+      { id: 5, name: "Web Sockets" }
     ],
+    liveLink: "https://paperfun.eeshm.me",
     github: "https://github.com/eeshm/paper.fun",
     image: "/paperfun.png",
   },
